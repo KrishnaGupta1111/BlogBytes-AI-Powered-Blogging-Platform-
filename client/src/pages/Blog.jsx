@@ -24,7 +24,7 @@ const {axios}=useAppContext()
   const fetchBlogData=async()=>{
   try {
     const {data}=await axios.get(`/api/blog/${id}`)
-    data.success ? setData(data.blog) : toast.error(data.message)
+    data.success ? setData(data.blog):toast.error(data.message)
   } catch (error) {
     toast.error(error.message)
   }
