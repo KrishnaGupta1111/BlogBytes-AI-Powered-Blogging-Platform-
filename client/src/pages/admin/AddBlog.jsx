@@ -3,6 +3,7 @@ import { assets, blogCategories } from "../../assets/assets";
 import Quill from "quill";
 import { useAppContext } from "../../context/AppContext";
 import toast from "react-hot-toast";
+import {parse} from 'marked';
 
 const AddBlog = () => {
   const { axios } = useAppContext();
@@ -19,7 +20,8 @@ const AddBlog = () => {
   const [isPublished, setIsPublished] = useState(false);
 
   const generateContent = async () => {
-    if (!title) return toast.error("Please enter a title");
+    if (!title) 
+    return toast.error("Please enter a title");
 
     try {
       setLoading(true);
@@ -27,7 +29,7 @@ const AddBlog = () => {
         prompt: title,
       });
       if (data.success) {
-        quillRef.current.root.innerHTML = data.content;
+        quillRef.current.root.innerHTML = parse(data.content);
       } else {
         toast.error(data.message);
       }

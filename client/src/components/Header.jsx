@@ -39,6 +39,7 @@ const onClear=()=>{
             </form>
 
       </div>
+      
       <div className='text-center'>
         {input && <button onClick={onClear} className='border font-light text-xs py-1 px-3 rounded-sm shadow-custom-sm cursor-pointer'>Clear Search</button>}
       </div>
