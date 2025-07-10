@@ -16,5 +16,4 @@ Whether you're a casual blogger or a content strategist, BlogBytes saves time by
 - 📄 **Create, Edit, and Delete Blogs**
 - 📚 **My Blogs Dashboard**
 - 🌐 **Responsive UI**
-- 🔍 **SEO-Friendly Blog URLs**
 - 💬 **Comment Section**
