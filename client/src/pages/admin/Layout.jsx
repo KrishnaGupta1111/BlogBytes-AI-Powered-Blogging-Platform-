@@ -1,7 +1,7 @@
 import React from "react";
 import { assets } from "../../assets/assets";
 import { Outlet, useNavigate } from "react-router-dom";
-import SideBar from "../../components/admin/SideBar";
+import Sidebar from "../../components/admin/Sidebar";
 import { useAppContext } from "../../context/AppContext";
 
 const Layout = () => {
@@ -32,7 +32,7 @@ const Layout = () => {
       </div>
 
       <div className="flex h-[calc(100vh-70px)]">
-        <SideBar />
+        <Sidebar />
         <Outlet />
       </div>
     </>
