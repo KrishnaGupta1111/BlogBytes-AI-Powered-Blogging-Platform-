@@ -1,35 +1,35 @@
-import React, { useEffect } from 'react'
-import { assets, dashboard_data } from '../../assets/assets'
-import { useState } from 'react'
+import React, { useEffect } from "react";
+import { assets, dashboard_data } from "../../assets/assets";
+import { useState } from "react";
 
-import BlogTableItem from '../../components/admin/BlogTableItem'
-import { useAppContext } from '../../context/AppContext'
-import toast from 'react-hot-toast'
+import BlogTableItem from "../../components/admin/BlogTableItem";
+import { useAppContext } from "../../context/AppContext";
+import toast from "react-hot-toast";
 
 const Dashboard = () => {
-const [dashboardData , setDashboardData]=useState({
-    blogs:0,
-    comments:0,
-    drafts:0,
-    recentBlogs:[]
-})
+  const [dashboardData, setDashboardData] = useState({
+    blogs: 0,
+    comments: 0,
+    drafts: 0,
+    recentBlogs: [],
+  });
 
-const {axios} = useAppContext()
+  const { axios } = useAppContext();
 
-const fetchDashboard=async()=>{
-try {
-  const {data}=await axios.get('/api/admin/dashboard')
-  data.success ? setDashboardData(data.dashboardData):toast.error(data.message)
-} catch (error) {
-  toast.error(error.message)
-}
-}
+  const fetchDashboard = async () => {
+    try {
+      const { data } = await axios.get("/api/admin/dashboard");
+      data.success
+        ? setDashboardData(data.dashboardData)
+        : toast.error(data.message);
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
 
-
-
-useEffect(()=>{
+  useEffect(() => {
     fetchDashboard();
-},[])
+  }, []);
 
   return (
     <div className="flex-1 p-4 md:p-10 bg-blue-50/50">
@@ -109,6 +109,6 @@ useEffect(()=>{
       </div>
     </div>
   );
-}
+};
 
-export default Dashboard
+export default Dashboard;

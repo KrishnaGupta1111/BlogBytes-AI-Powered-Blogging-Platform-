@@ -1,34 +1,30 @@
-import React from 'react'
-import { blog_data, dashboard_data } from '../../assets/assets';
-import BlogTableItem from '../../components/admin/BlogTableItem';
-import { useState , useEffect} from 'react';
-import { useAppContext } from '../../context/AppContext';
-import toast from 'react-hot-toast';
-
+import React from "react";
+import { blog_data, dashboard_data } from "../../assets/assets";
+import BlogTableItem from "../../components/admin/BlogTableItem";
+import { useState, useEffect } from "react";
+import { useAppContext } from "../../context/AppContext";
+import toast from "react-hot-toast";
 
 const ListBlog = () => {
+  const [blogs, setBlogs] = useState([]);
+  const { axios } = useAppContext();
 
-
-  const[blogs,setBlogs]=useState([]); 
-  const {axios} =useAppContext();
-
-
-  const fetchBlogs=async()=>{
-   try {
-    const {data}=await axios.get('/api/admin/blogs')
-    if(data.success){
-      setBlogs(data.blogs)
-    }else{
-      toast.error(data.message)
+  const fetchBlogs = async () => {
+    try {
+      const { data } = await axios.get("/api/admin/blogs");
+      if (data.success) {
+        setBlogs(data.blogs);
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error(error.message);
     }
-   } catch (error) {
-    toast.error(error.message)
-   }
-  }
+  };
 
-  useEffect(()=>{
-  fetchBlogs()
-  },[])
+  useEffect(() => {
+    fetchBlogs();
+  }, []);
 
   return (
     <div className="flex-1 pt-5 px-5 sm:pt-12 sm:pl-16 bg-blue-50/50">
@@ -62,7 +58,7 @@ const ListBlog = () => {
                   key={blog._id}
                   blog={blog}
                   fetchBlogs={fetchBlogs}
-                  index={index +1}
+                  index={index + 1}
                 />
               );
             })}
@@ -71,6 +67,6 @@ const ListBlog = () => {
       </div>
     </div>
   );
-}
+};
 
-export default ListBlog
+export default ListBlog;

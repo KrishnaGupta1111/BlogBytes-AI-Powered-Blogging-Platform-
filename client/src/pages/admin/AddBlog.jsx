@@ -3,7 +3,7 @@ import { assets, blogCategories } from "../../assets/assets";
 import Quill from "quill";
 import { useAppContext } from "../../context/AppContext";
 import toast from "react-hot-toast";
-import {parse} from 'marked';
+import { parse } from "marked";
 
 const AddBlog = () => {
   const { axios } = useAppContext();
@@ -20,8 +20,7 @@ const AddBlog = () => {
   const [isPublished, setIsPublished] = useState(false);
 
   const generateContent = async () => {
-    if (!title) 
-    return toast.error("Please enter a title");
+    if (!title) return toast.error("Please enter a title");
 
     try {
       setLoading(true);
