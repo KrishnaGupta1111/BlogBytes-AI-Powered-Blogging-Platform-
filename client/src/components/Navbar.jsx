@@ -13,7 +13,7 @@ const Navbar = () => {
         onClick={() => navigate("/")}
       >
         <img
-          src={assets.blogbytes_logo}
+          src={"/blogbytes_logo.svg"}
           alt="BlogBytes logo"
           className="w-10 h-10 sm:w-12 sm:h-12"
         />

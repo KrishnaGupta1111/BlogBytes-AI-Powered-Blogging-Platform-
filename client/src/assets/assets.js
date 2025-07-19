@@ -31,7 +31,6 @@ import dashboard_icon_1 from "./dashboard_icon_1.svg";
 import dashboard_icon_2 from "./dashboard_icon_2.svg";
 import dashboard_icon_3 from "./dashboard_icon_3.svg";
 import dashboard_icon_4 from "./dashboard_icon_4.svg";
-import blogbytes_logo from "./blogbytes_logo.svg";
 
 export const assets = {
   facebook_icon,
@@ -57,7 +56,6 @@ export const assets = {
   dashboard_icon_2,
   dashboard_icon_3,
   dashboard_icon_4,
-  blogbytes_logo,
 };
 export const blogCategories = [
   "All",
