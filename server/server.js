@@ -13,7 +13,7 @@ await connectDB();
 // ✅ Use CORS – allow your Vercel frontend only
 app.use(
   cors({
-    origin: "*", 
+    origin: "https://blogbytesai.vercel.app",
   })
 );
 
