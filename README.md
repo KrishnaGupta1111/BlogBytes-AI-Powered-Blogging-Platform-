@@ -15,5 +15,5 @@ BlogBytes is a modern blogging platform that leverages the power of **AI** to he
 - 🔐 **User Authentication (JWT)**
 - 📄 **Create, Edit, and Delete Blogs**
 - 📚 **My Blogs Dashboard**
-- 🌐 **Responsive UI**
+
 
